@@ -76,7 +76,7 @@ public abstract class BaseMapServlet extends HttpServlet {
         File configFile = new File(app);
 
         if (!configFile.isAbsolute()) {
-            configFile = new File(getServletContext().getRealPath(app));
+            configFile = new File(getServletContext().getRealPath("/" + app));
         }
 
         MapPrinter printer;
