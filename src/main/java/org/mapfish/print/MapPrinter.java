@@ -202,7 +202,7 @@ public class MapPrinter {
      * Stop the thread pool or others.
      */
     @PreDestroy
-    public void stop() {
+    public synchronized void stop() {
         if (config != null) {
             config.close();
             config = null;
